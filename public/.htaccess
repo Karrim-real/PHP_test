@@ -1,0 +1,8 @@
+RewriteEngine On
+# Redirect assets requests to the assets folder
+# Redirect assets requests to the assets folder
+RewriteRule ^assets/(.*)$ assets/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
